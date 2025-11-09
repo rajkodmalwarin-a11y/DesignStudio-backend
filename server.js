@@ -1,9 +1,6 @@
-import express from 'express';
-import cors from 'cors';
-import { config as falConfig, subscribe } from '@fal-ai/client';
-import dotenv from 'dotenv';
-
-dotenv.config();
+const express = require('express');
+const cors = require('cors');
+require('dotenv').config();
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -96,7 +93,8 @@ app.post('/api/generate-image', async (req, res) => {
 
 // FAL AI Generation
 async function generateWithFAL(prompt, type) {
-  falConfig({ credentials: FAL_AI_API_KEY });
+  const { fal } = require('@fal-ai/client');
+  fal.config({ credentials: FAL_AI_API_KEY });
 
   // Model selection
   const model = type === 'logo' ? 'fal-ai/recraft-v3' : 'fal-ai/flux/dev';
@@ -109,7 +107,7 @@ async function generateWithFAL(prompt, type) {
   console.log(`🤖 Using FAL AI: ${model}`);
   console.log(`🎯 Prompt: ${enhancedPrompt}`);
 
-  const result = await subscribe(model, {
+  const result = await fal.subscribe(model, {
     input: {
       prompt: enhancedPrompt,
       image_size: "square_hd",

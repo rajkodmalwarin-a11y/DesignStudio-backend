@@ -1,21 +1,39 @@
 {
-  "name": "designstudio-backend",
+  "name": "fal-ai-proxy-server",
   "version": "1.0.0",
-  "type": "module",
+  "description": "Proxy server for FAL AI API",
+  "main": "server.js",
   "scripts": {
     "start": "node server.js",
     "dev": "nodemon server.js"
   },
   "dependencies": {
-    "express": "^4.18.2",
+    "@fal-ai/client": "^1.7.2",
+    "cloudinary": "^2.4.0",
+    "clsx": "^2.0.0",
+    "cmdk": "^0.2.1",
     "cors": "^2.8.5",
-    "dotenv": "^16.3.1",
-    "@fal-ai/client": "^1.7.2"
+    "dotenv": "^16.6.1",
+    "express": "^4.21.2",
+    "framer-motion": "^10.16.4",
+    "immer": "^10.0.3",
+    "lucide-react": "^0.294.0",
+    "maath": "^0.9.0",
+    "mongoose": "^8.5.2",
+    "node-fetch": "^3.3.2",
+    "nodemon": "^3.1.4",
+    "openai": "^3.3.0",
+    "razorpay": "^2.9.5",
+    "react": "^18.2.0",
+    "react-color": "^2.19.3",
+    "react-dom": "^18.2.0",
+    "sonner": "^1.0.0",
+    "tailwind-merge": "^2.0.0",
+    "tailwindcss-animate": "^1.0.7",
+    "three": "^0.158.0",
+    "valtio": "^1.11.2"
   },
   "devDependencies": {
     "nodemon": "^3.0.1"
-  },
-  "engines": {
-    "node": ">=18.0.0"
   }
 }
