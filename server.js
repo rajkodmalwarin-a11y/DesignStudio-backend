@@ -247,3 +247,7 @@ app.listen(PORT, () => {
     console.log('🎉 Both AI services are ready!');
   }
 });
+// Root route
+app.get('/', (req, res) => {
+  res.send('✅ Multi-AI Backend is running on Render. Try /api/health or /api/ai-services');
+});
