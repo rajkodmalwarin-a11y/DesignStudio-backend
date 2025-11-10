@@ -8,7 +8,7 @@ const PORT = process.env.PORT || 5000;
 // Middleware
 app.use(cors({
   origin: [
-    'https://designstudio.vercel.app',   // your live frontend URL
+    'https://design-studio-frontend.vercel.app',   // your live frontend URL
     'http://localhost:5173',             // for local dev (if using Vite)
     'http://localhost:3000'              // for React dev server
   ],
